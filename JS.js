@@ -5,7 +5,12 @@ window.addEventListener('scroll', () => {
       document.body.offsetHeight - 50
     ) {
       scrollText.classList.add('visible');
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        scrollText.classList.remove('visible');
+      }, 3000);
     } else {
       scrollText.classList.remove('visible');
+      clearTimeout(timeoutId);
     }
   });
