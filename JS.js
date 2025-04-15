@@ -1,8 +1,9 @@
+let timeoutId;
 window.addEventListener('scroll', () => {
     const scrollText = document.getElementById('scroll-text');
     if (
       window.innerHeight + window.scrollY >=
-      document.body.offsetHeight - 50
+      document.body.offsetHeight - 100
     ) {
       scrollText.classList.add('visible');
       clearTimeout(timeoutId);
