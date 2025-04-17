@@ -10,7 +10,7 @@ window.addEventListener('scroll', () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
         scrollText.classList.remove('visible');
-      }, 3000);
+      }, 1000);
     } else {
       scrollText.classList.remove('visible');
       clearTimeout(timeoutId);
