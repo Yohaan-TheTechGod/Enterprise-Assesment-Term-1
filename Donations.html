@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nav bar</title>
-    <link rel="stylesheet" href="Css Main.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nav bar</title>
+  <link rel="stylesheet" href="Css Main.css" />
 </head>
 <body>
-    <div class="navbar">
+  <div class="Background-Video">
+    <video autoplay muted loop id="bg-video">
+      <source src="MainPageRSLVideo.mp4" type="video/mp4" />
+      Your browser does not support the video?
+    </video>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="Main Page.html" class="nav-logo">
+        <img src="logoINGRSL.png" alt="Ingleburn RSL" style="height: 50px;"/> 
+        <span>Ingleburn RSl</span> 
+      </a>
+      <div class="nav-links">
         <a href="Main Page.html">Home</a>
         <a href="About.html">About</a>
         <a href="History.html">Services</a>
@@ -17,6 +29,17 @@
         <a href="Membership.html">Memberships</a>
         <a href="Event.html">Events</a>
         <a href="Donations.html">Donations</a>
+      </div>
     </div>
+  </nav>
+
+  <div class="scroll-text" id="scroll-text">
+    <p>You've reached the bottom of the page!</p>
+  </div>
+
+  <script src="JS.js"></script>
+
+  <footer>
+    <p>© 2025 Yohaan Enterprises All Rights Reserverd on behalf of The Crown</p>
+  </footer>
 </body>
-</html>
