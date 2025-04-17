@@ -1,3 +1,4 @@
+// you have reached the bottom of the page script
 let timeoutId;
 window.addEventListener('scroll', () => {
     const scrollText = document.getElementById('scroll-text');
