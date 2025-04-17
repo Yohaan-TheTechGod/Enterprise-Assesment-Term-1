@@ -65,7 +65,7 @@ h1 {
 .nav-logo img {
   height: 50px; 
   width: auto; 
-  transition: all 1s ease-in;
+  transition: all 0.5s ease-in;
 }
 
 .nav-logo:hover img {
