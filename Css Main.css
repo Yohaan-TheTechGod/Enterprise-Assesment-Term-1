@@ -4,39 +4,40 @@ body {
   padding: 0; 
   position: relative;
   min-height: 100vh;
-  background: #000;
+  background-color: #f0f8ff;
   color: #fff;
-  }
+}
 
 h1 {
-  font-family: Garamond, serif;
   color: rgb(255, 255, 255);
   background-color: rgba(51, 51, 51, 0.3);
 }
-  .video-background, .Background-Video {
-    position: relative; 
-    width: 100%; 
-    height: auto; 
+
+.video-background, .Background-Video {
+  position: relative; 
+  width: 100%; 
+  height: auto; 
 }
 
 .Background-Video video {
-    width: 100%; 
-    height: auto; 
-    display: block; 
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+  display: block; 
 }
 
 .video-overlay {
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    color: white; 
-    font-size: 2em; 
-    text-align: center; 
-    z-index: 1; 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: white; 
+  font-size: 2em; 
+  text-align: center; 
+  z-index: 1; 
 }
 
-  .navbar {
+.navbar {
   background-color: rgba(51, 51, 51, 0.85);
   padding: 15px 0;
   font-family: Garamond, serif;
@@ -45,59 +46,60 @@ h1 {
   top: 0;
   width: 100%;
   z-index: 1000;
-  }
-  
-  .nav-container {
+}
+
+.nav-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  }
-  
-  .nav-logo {
-    display: flex; 
-    align-items: center; 
-}
-  .nav-logo img {
-    height: 50px; 
-    width: auto; 
-    transition: all 1s ease-in;
 }
 
-  .nav-logo:hover img{
+.nav-logo {
+  display: flex; 
+  align-items: center; 
+}
+
+.nav-logo img {
+  height: 50px; 
+  width: auto; 
+  transition: all 1s ease-in;
+}
+
+.nav-logo:hover img {
   transform: scale(1.5);
 }
 
-  .nav-logo:hover span{
+.nav-logo:hover span {
   font-weight: bold;
   font-size: 35px;
 }
-  .nav-logo span {
-    font-size: 20px; 
-    line-height: 50px; 
-    margin-left: 10px; 
-    padding: 5px;
-    transition: all 0.5s ease-in;
-    color: black;
-    text-decoration:rgba(51, 51, 51, 0.85)
+
+.nav-logo span {
+  font-size: 20px; 
+  line-height: 50px; 
+  margin-left: 10px; 
+  padding: 5px;
+  transition: all 0.5s ease-in;
+  color: black;
 }
 
-  .nav-links a {
+.nav-links a {
   margin: 0 15px; 
   text-decoration: none; 
   color: #ffffff; 
   transition: all 0.5s ease;
 }
 
-  .nav-links a:hover {
+.nav-links a:hover {
   font-weight: bold; 
   font-size: 20px; 
-  background-color: rgba(80, 80, 80, 0.85)
+  background-color: rgba(80, 80, 80, 0.85);
 }
-  
-  .scroll-text {
+
+.scroll-text {
   position: fixed;
   bottom: 50px;
   left: 50%;
@@ -110,46 +112,33 @@ h1 {
   transition: opacity 0.5s ease;
   font-size: 1.1rem;
   z-index: 20;
-  }
-  
-  .scroll-text.visible {
+}
+
+.scroll-text.visible {
   opacity: 1;
   pointer-events: auto;
-  }
-  
-  footer {
-  background-color: rgba(51, 51, 51, 0.5);
+}
+
+footer {
+  background-color: rgba(51, 51, 51, 0.85);
   text-align: center;
   padding: 15px 20px;
-  position: bottom;
   bottom: 0;
   width: 100%;
   font-size: 0.9rem;
   color: #ffffff;
   margin-top: 40px;
-  }
-
-  html, body {
-    overflow-x: hidden; 
 }
 
-.Background-Video video {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
+html, body {
+  overflow-x: hidden; 
 }
 
 .content-below-video {
-    max-width: 100%; 
-    height: auto; 
-    padding: 50px;
-    text-align: center;
-    
-}
-
-body {
-  background-color: #f0f8ff;
+  max-width: 100%; 
+  height: auto; 
+  padding: 50px;
+  text-align: center;
 }
 
 .paper {
