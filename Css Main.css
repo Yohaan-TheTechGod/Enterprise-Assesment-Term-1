@@ -1,29 +1,41 @@
 body {
   font-family: Garamond, serif;
   margin: 0;
-  padding: 60px 0 0 0; 
+  padding: 0; 
   position: relative;
   min-height: 100vh;
   background: #000;
   color: #fff;
   }
-  
+
+h1 {
+  font-family: Garamond, serif;
+  color: rgb(255, 255, 255);
+  background-color: rgba(51, 51, 51, 0.3);
+}
   .video-background, .Background-Video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-  }
-  
-  #bg-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  }
-  
+    position: relative; 
+    width: 100%; 
+    height: auto; 
+}
+
+.Background-Video video {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.video-overlay {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    font-size: 2em; 
+    text-align: center; 
+    z-index: 1; 
+}
+
   .navbar {
   background-color: rgba(51, 51, 51, 0.85);
   padding: 15px 0;
@@ -87,7 +99,7 @@ body {
   
   .scroll-text {
   position: fixed;
-  bottom: 20px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(31, 31, 31, 0.85);
@@ -106,13 +118,27 @@ body {
   }
   
   footer {
-  background-color: rgba(51, 51, 51, 0.85);
+  background-color: rgba(51, 51, 51, 0.5);
   text-align: center;
   padding: 15px 20px;
-  position: fixed;
+  position: bottom;
   bottom: 0;
   width: 100%;
   font-size: 0.9rem;
-  color: #ccc;
+  color: #ffffff;
   margin-top: 40px;
   }
+
+  html, body {
+    overflow-x: hidden; 
+}
+
+.Background-Video video {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.content-below-video img {
+    max-width: 100%; 
+    height: auto; 
+}
