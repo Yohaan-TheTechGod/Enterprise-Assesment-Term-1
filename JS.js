@@ -37,3 +37,23 @@ window.addEventListener("scroll", () => {
 
   paperContainer.style.opacity = opacity; // Apply the opacity to the paper container
 });
+
+//--------------------------------------------------------------------------------------------------------------------------------------------//
+
+//Audio button for background video
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('video');
+  const audioToggleBtn = document.getElementById('audioToggleBtn');
+
+  if (!video || !audioToggleBtn) return;
+
+  audioToggleBtn.addEventListener('click', () => {
+    if (video.muted) {
+      video.muted = false;
+      audioToggleBtn.textContent = 'Mute Audio';
+    } else {
+      video.muted = true;
+      audioToggleBtn.textContent = 'Play Audio';
+    }
+  });
+});
