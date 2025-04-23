@@ -27,7 +27,7 @@ window.onload = function () { // Load the Whole HTML pg
       if (index < lines.length) { //if user scrolls down, the lines begin to appear
         lines[index].classList.add('visible');
         index++;
-        setTimeout(showNextLine, 300); // delay between lines being displayed by 300 Milliseconds
+        setTimeout(showNextLine, 350); // delay between lines being displayed by 350 Milliseconds
       }
     }
 
