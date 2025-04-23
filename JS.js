@@ -16,44 +16,65 @@ window.onload = function () { // Load the Whole HTML pg
       clearTimeout(timeoutId); // cancel any existing timeout
     }
   });
+//--------------------------------------------------------------------------------------------------------------------------------------------//
+
+// Animate About page text lines if on About.html
+  if (window.location.pathname.endsWith('About.html')) {
+    const lines = document.querySelectorAll('#animated-text-container .animated-line');
+    let index = 0;
+
+    function showNextLine() {
+      if (index < lines.length) { //if user scrolls down, the lines begin to appear
+        lines[index].classList.add('visible');
+        index++;
+        setTimeout(showNextLine, 300); // delay between lines being displayed by 300 Milliseconds
+      }
+    }
+
+    //start with no lines visible
+    lines.forEach(line => line.classList.remove('visible'));
+
+    //Start animation
+    showNextLine();
+  }
 }; 
 //--------------------------------------------------------------------------------------------------------------------------------------------//
 
 // Show paper container when user starts scrolling
 window.addEventListener("scroll", () => {
   const paperContainer = document.getElementById("paper-container");
-  const scrollTop = window.scrollY; // The amount the page has been scrolled
-  const windowHeight = window.innerHeight; // The height of the viewport
+  const scrollTop = window.scrollY; //The amount the page has been scrolled
+  const windowHeight = window.innerHeight; //The height of the viewport
   
-  const fadeStart = windowHeight * 0.1; // Start fading in at 10% of the viewport height
-  const fadeEnd = windowHeight * 0.2;  // Fully visible after 20% of the viewport height (scroll down more for full opacity)
+  const fadeStart = windowHeight * 0.1; //Start fading in at 10% of the viewport height
+  const fadeEnd = windowHeight * 0.2;  //Fully visible after 20% of the viewport height (scroll down more for full opacity)
 
-  let opacity = 0; // Default opacity is set to 0
+  let opacity = 0; //opacity starts at 0
 
   if (scrollTop > fadeStart) {
-    // Calculate opacity based on how much the user has scrolled
+    //Calculate opacity based on how much the user has scrolled
     opacity = Math.min(1, (scrollTop - fadeStart) / (fadeEnd - fadeStart));
   }
 
-  paperContainer.style.opacity = opacity; // Apply the opacity to the paper container
+  paperContainer.style.opacity = opacity; //Apply the opacity to the paper container
 });
 
 //--------------------------------------------------------------------------------------------------------------------------------------------//
 
 //Audio button for background video
 document.addEventListener('DOMContentLoaded', () => {
-  const video = document.getElementById('video');
-  const audioToggleBtn = document.getElementById('audioToggleBtn');
+  const video = document.getElementById('video'); //gets the audio data from the video file
+  const audioToggleBtn = document.getElementById('audioToggleBtn'); //generates a toggle button
 
   if (!video || !audioToggleBtn) return;
 
   audioToggleBtn.addEventListener('click', () => {
-    if (video.muted) {
+    if (video.muted) { //if the mute button is shown, make the video NOT muted
       video.muted = false;
-      audioToggleBtn.textContent = 'Mute Audio';
+      audioToggleBtn.textContent = 'Mute Audio'; //change button text 
     } else {
-      video.muted = true;
-      audioToggleBtn.textContent = 'Play Audio';
+      video.muted = true; //if not shown, mute the audio
+      audioToggleBtn.textContent = 'Play Audio'; //change button text
     }
   });
 });

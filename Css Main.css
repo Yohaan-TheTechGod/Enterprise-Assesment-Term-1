@@ -6,6 +6,13 @@ body {
   min-height: 100vh;
   background-color: #f0f8ff;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 60px; 
+  box-sizing: border-box;
 }
 
 .video-background, .Background-Video {
@@ -194,4 +201,32 @@ html, body {
 .membership-btn:hover {
   background-color: #606060; 
   color: white;
+}
+
+#animated-text-container {
+  background-color: #222222; 
+  padding: 30px;
+  border-radius: 15px;
+  max-height: 50vh;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  background-color: #222222; 
+  overflow-y: auto;
+  margin: 20px auto;
+}
+
+#animated-text-container .animated-line {
+  opacity: 0;
+  transform: translateY(100000px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  font-size: 24px; 
+  color: #ffffff; 
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+#animated-text-container .animated-line.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
