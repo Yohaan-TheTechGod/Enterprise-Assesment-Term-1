@@ -236,6 +236,7 @@ html, body {
   transform: translateY(10px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   font-size: 30px; 
+  font-family: Garamond, serif;
   color: #ffffff; 
   line-height: 1.6;
   margin: 10px 0;
@@ -312,4 +313,69 @@ html, body {
   font-size: 12px;
   text-align: center;
   color: #000000;
+}
+
+.contact-container {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  color:#000000;
+  font-size: large; 
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: large;
+}
+
+.contact-form button:hover {
+  background-color: #004a99;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('Contact_Background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  min-height: 100vh;
+  font-family: Garamond, serif;
 }

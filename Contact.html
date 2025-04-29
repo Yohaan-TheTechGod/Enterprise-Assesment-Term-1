@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nav bar</title>
+  <title>Contact Ingleburn RSL</title>
   <link rel="stylesheet" href="Css Main.css" />
 </head>
 <body>
 
-    <nav class="navbar">
+  <nav class="navbar">
     <div class="nav-container">
       <a href="Main Page.html" class="nav-logo">
-        <img src="logoINGRSL.png" alt="Ingleburn RSL" style="height: 50px;"/> 
-        <span>Ingleburn RSl</span> 
+        <img src="logoINGRSL.png" alt="Ingleburn RSL" style="height: 50px;" /> 
+        <span>Ingleburn RSL</span> 
       </a>
       <div class="nav-links">
         <a href="Main Page.html">Home</a>
         <a href="About.html">About</a>
         <a href="History.html">Services</a>
-        <a href="Contact.html">Contact</a>
+        <a href="Contact.html" class="active">Contact</a>
         <a href="Location.html">Location</a>
         <a href="Membership.html">Memberships</a>
         <a href="Event.html">Events</a>
@@ -27,13 +27,45 @@
     </div>
   </nav>
 
+  <main class="contact-container">
+    <h1>Contact Us</h1>
+    <p>If you have any inquerues, give us a message through the following email form 😁 Have a Good One!</p>
+
+    <div class="contact-content">
+      <form class="contact-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <h2>Club Contact Details</h2>
+        <p><strong>Phone:</strong> (02) 9765 7700</p>
+        <p><strong>Email:</strong> info@ingleburnrsl.com.au</p>
+        <p><strong>Address:</strong> 70 Chester Rd, Ingleburn NSW 2565</p>
+        <p><strong>Opening Hours:</strong> Mon–Sun: 10am – 12am</p>
+      </div>
+    </div>
+  </main>
+
   <div class="scroll-text" id="scroll-text">
     <p>You've reached the bottom of the page!</p>
   </div>
 
-  <script src="JS.js"></script>
-
   <footer>
     <p>© 2025 Yohaan Enterprises All Rights Reserved 😁</p>
   </footer>
+
+  <script src="JS.js"></script>
 </body>
+</html>
