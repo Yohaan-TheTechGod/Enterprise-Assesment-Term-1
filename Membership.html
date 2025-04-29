@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nav bar</title>
+  <title>Membership Form</title>
   <link rel="stylesheet" href="Css Main.css" />
 </head>
 <body>
 
-    <nav class="navbar">
+  <nav class="navbar">
     <div class="nav-container">
       <a href="Main Page.html" class="nav-logo">
-        <img src="logoINGRSL.png" alt="Ingleburn RSL" style="height: 50px;"/> 
-        <span>Ingleburn RSl</span> 
+        <img src="logoINGRSL.png" alt="Ingleburn RSL" style="height: 50px;"/>
+        <span>Ingleburn RSL</span>
       </a>
       <div class="nav-links">
         <a href="Main Page.html">Home</a>
@@ -27,13 +27,43 @@
     </div>
   </nav>
 
+  <div class="form-container">
+    <h2>Membership Form</h2>
+    <form id="membershipForm" method="POST" enctype="application/x-www-form-urlencoded">
+      <label>First Name*:<input type="text" name="firstName" required></label>
+      <label>Last Name*:<input type="text" name="lastName" required></label>
+      <label>Email*:<input type="email" name="email" required></label>
+      <label>Phone Number*:<input type="tel" name="phone" required></label>
+      <label>Address 1*:<input type="text" name="address1" required></label>
+      <label>Address 2:<input type="text" name="address2"></label>
+      <label>Password*:<input type="password" name="password" required></label>
+      <label>Security Question*:
+        <select name="securityQuestion" required>
+          <option value="">-- Select a question --</option>
+          <option>What is your favourite food item?</option>
+          <option>What is your mother's maiden name?</option>
+          <option>What was your first school?</option>
+          <option>Where is your parents house located?</option>
+          <option>What University did you attend?</option>
+        </select>
+        <label>Answer*:
+          <input type="text" name="securityAnswer" required>
+        </label>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <p style="font-size: 16px; margin-top: 10px;">* Means Compuslory</p>
+    <p id="statusMsg" style="color: green;"></p>
+    <p id="errorMsg" style="color: red;"></p>
+  </div>
+
   <div class="scroll-text" id="scroll-text">
     <p>You've reached the bottom of the page!</p>
   </div>
 
-  <script src="JS.js"></script>
-
   <footer>
     <p>© 2025 Yohaan Enterprises All Rights Reserved 😁</p>
   </footer>
+
 </body>
+</html>

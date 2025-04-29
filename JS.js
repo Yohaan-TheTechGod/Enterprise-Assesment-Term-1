@@ -78,3 +78,78 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+//--------------------------------------------------------------------------------------------------------------------------------------------//
+
+//Java script to allow the form details to be sent to a google sheet
+document.getElementById("membershipForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // code that makes sure the data is sent correctly to the Google Sheets
+  const form = e.target;
+  const formData = new FormData(form); 
+  const data = new URLSearchParams();
+  formData.forEach((value, key) => {
+    data.append(key, value.trim()); // trims white space from each field
+  });
+
+  const errorMsg = document.getElementById("errorMsg"); // error message
+  const statusMsg = document.getElementById("statusMsg"); // status message
+
+  // Clear previous error messages
+  errorMsg.innerText = "";
+  statusMsg.innerText = "";
+
+  // Form values
+  const firstName = formData.get("firstName").trim();
+  const lastName = formData.get("lastName").trim();
+  const email = formData.get("email").trim();
+  const phone = formData.get("phone").trim();
+  const address1 = formData.get("address1").trim();
+  const password = formData.get("password").trim();
+  const question = formData.get("securityQuestion");
+  const answer = formData.get("securityAnswer").trim();
+
+  if (!answer) {
+    errorMsg.innerText = "Please provide an answer to the selected security question."; // validates an answer has been inputted for the security question
+    return;
+  }
+
+  // validation for email fields and for name field
+  const nameRegex = /^[A-Za-z\s]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // ensures correct email address, in format such as helloimbob@gmail.com
+
+  if (!firstName || !lastName || !email || !phone || !address1 || !password || !question) { 
+    errorMsg.innerText = "Please fill in all compulsory fields."; // displays error message if all the fields are NOT filled in
+    return;
+  }
+
+  if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
+    errorMsg.innerText = "Names cannot contain numbers or special characters."; // if numbers or any special characters (:/'.!@#$%^&*) in name, error message appears
+    return;
+  }
+
+  if (!emailRegex.test(email)) {
+    errorMsg.innerText = "Please enter a valid email address."; // error message if email is not correct and doesn't operate
+    return;
+  }
+
+  // Submit to Google Sheets
+  fetch("https://script.google.com/macros/s/AKfycbxlyuH5EK5zMrAvrPJ5FlycMCHhHZQHLRtmM8jc2RCi6lb6LuY_-rEz1E20jNholke9/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded" // send as URL encoded string
+    },
+    body: data.toString() // convert URLSearchParams to proper encoded string format
+  })
+  
+  .then(res => res.text())
+  .then(msg => {
+    statusMsg.innerText = "Form submitted successfully!"; // successful message
+    form.reset(); // reset form after submission
+  })
+  .catch(err => {
+    errorMsg.innerText = "Submission failed. Please try again later."; // not successful message (if something went wrong)
+    console.error(err); // logs error to console
+  });
+});
