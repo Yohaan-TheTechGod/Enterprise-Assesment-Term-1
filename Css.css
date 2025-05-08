@@ -4,9 +4,13 @@ body, html {
   font-family: Bodoni, serif;
   overflow-x: hidden;
 }
-  
+
+html, body {
+  scroll-behavior: auto;
+}
+
 main {
-  margin-top: 100px;
+  margin-top: 120px;
   padding: 20px;
   text-align: center;
 }
@@ -20,10 +24,9 @@ main {
   opacity: 0;
   transform: translateY(20px); 
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 10px 15px;
+  padding: 2px 15px;
   border-radius: 10px;
   display: inline-block;
-  box-shadow: #505050;
 }
   
 .Title-Of-The-Page.animate {
@@ -114,7 +117,9 @@ nav ul li a {
 }
   
 nav ul li a:hover {
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-color: white;
 }
   
 .intro.hide {
@@ -123,6 +128,7 @@ nav ul li a:hover {
   
 .intro h1 {
   font-size: 3em;
+  font-family: Bodoni, serif;
 }
   
 .word {
@@ -149,7 +155,7 @@ footer {
   gap: 20px;
   flex-wrap: wrap;
   text-align: center;
-  font-family: Bondi, serif;
+  font-family: Bodoni, serif;
 }
   
 .footer-left {
@@ -206,6 +212,56 @@ footer {
   margin-right: 5px;
 }
 
+.map-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Location-info-box {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;
+}
+  
+.Location-info-box h2 {
+  margin-top: 0;
+  font-size: 2em;
+  color: #000000;
+  font-family: Bodoni, serif;
+}
+  
+.Location-info-box p {
+  font-size: 2em;
+  color: #000000;
+  margin: 15px 0;
+  font-family: Bodoni, serif;
+}
+  
+.info-button {
+  display: inline-block;
+  font-family: Bodoni, serif;
+  font-size: 1.3em;
+  padding: 10px 25px;
+  background-color: #c49a6c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+  
+.info-button:hover {
+  background-color: rgba(40, 107, 200);
+}
+
 #background-video {
   position: fixed;
   top: 0;
@@ -238,7 +294,7 @@ footer {
 
 .content-block {
     display: flex;
-    background-color: rgba(209, 19, 152, 0.75);
+    background-color: rgba(192,52,61, 0.85);
     padding: 20px;
     align-items: center;
     justify-content: center;
@@ -283,7 +339,7 @@ footer {
 }
   
 .membership-button:hover {
-  background-color: rgba(36, 97, 180);
+  background-color: rgba(40, 107, 200);
 }
   
   

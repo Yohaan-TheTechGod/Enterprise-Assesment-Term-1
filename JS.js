@@ -1,3 +1,15 @@
+// This JS Function is to set the page to the very top when the page is loading in
+if ('scrollRestoration' in history) { // Check if the browser supports the scrollRestoration feature
+    history.scrollRestoration = 'manual'; // Set the scroll restoration feature to manual to avoid unwanted behavior when reloading the page
+  }
+  
+  // Scroll to top when DOM content is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+      window.scrollTo(0, 0);
+  });  
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------//
+
 // This JS Function is for the initial page load and transitions
 document.addEventListener('DOMContentLoaded', function() { // Waits until the HTML document has been fully loaded and parsed
   // Select all elements with the class name 'word'
