@@ -8,6 +8,7 @@ body, html {
 main {
   margin-top: 100px;
   padding: 20px;
+  text-align: center;
 }
 
 .Title-Of-The-Page {
@@ -18,7 +19,12 @@ main {
   position: relative;
   opacity: 0;
   transform: translateY(20px); 
-  }
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: #505050;
+}
   
 .Title-Of-The-Page.animate {
   animation: slideUp 1s forwards;
@@ -55,7 +61,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
@@ -76,8 +82,8 @@ nav {
 }
 
 .logo img {
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   transition: transform 0.3s ease;
 }
   
@@ -104,6 +110,7 @@ nav ul li a {
   padding: 10px 15px;
   border: 4px solid black;
   transition: all 0.3s ease;
+  font-size: 1.5em;
 }
   
 nav ul li a:hover {
@@ -142,6 +149,7 @@ footer {
   gap: 20px;
   flex-wrap: wrap;
   text-align: center;
+  font-family: Bondi, serif;
 }
   
 .footer-left {
@@ -197,3 +205,85 @@ footer {
   height: auto;
   margin-right: 5px;
 }
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#audio-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001; /* above everything */
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-family: Bondi, serif;
+  }
+
+.content-block {
+    display: flex;
+    background-color: rgba(209, 19, 152, 0.75);
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    max-width: 80vw;
+    margin: 40px auto;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    padding-bottom: 50px;
+}
+  
+.content-text, .content-image {
+    flex: 1;
+}
+  
+.separator {
+  width: 5px;
+  background-color: black;
+  height: auto;
+  min-height: 150px; 
+  align-self: stretch;
+  }
+    
+.content-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+ 
+.membership-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #c49a6c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+  
+.membership-button:hover {
+  background-color: rgba(36, 97, 180);
+}
+  
+  

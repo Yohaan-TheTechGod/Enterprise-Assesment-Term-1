@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', function() { // Waits until the HT
       intro.classList.add('hide');
 
       // Delay the execution of the function by 500 milliseconds
-      setTimeout(() => {
+      //setTimeout(() => {
           // Scroll the window to the bottom of the page, using the smooth scrolling effect
-          window.scrollTo({
-              top: window.innerHeight, // Set the scroll position to the height of the view window
-              behavior: 'smooth' // Use the smooth scrolling effect
-          });
-      }, 500); // End of setTimeout function 
+        //  window.scrollTo({
+            //  top: window.innerHeight, // Set the scroll position to the height of the view window
+            //  behavior: 'smooth' // Use the smooth scrolling effect
+          //});
+      //}, 500); // End of setTimeout function 
   }, words.length * 350 + 1000); // End of setTimeout function 
 });
 
@@ -58,3 +58,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------//
+
+// This JS Function is for the audio toggle button functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Select the video element with the id 'background-video'
+    const video = document.getElementById('background-video');
+    // Select the button element with the id 'audio-toggle-btn'
+    const audioBtn = document.getElementById('audio-toggle-btn');
+
+    // Add a 'click' event listener to the audio toggle button
+    audioBtn.addEventListener('click', function() {
+        // If the video is currently muted, unmute it and change the button text to 'Mute'
+        if (video.muted) {
+            video.muted = false;
+            audioBtn.textContent = 'Mute'; // Change text to 'Mute' when the video is unmuted
+        } 
+        // If the video is currently unmuted, mute it and change the button text to 'Unmute'
+        else {
+            video.muted = true;
+            audioBtn.textContent = 'Unmute'; // Change text to 'Unmute' when the video is muted
+        }
+    });
+});
