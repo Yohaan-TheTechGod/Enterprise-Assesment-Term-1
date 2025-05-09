@@ -92,3 +92,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------//
+
+// This JS Function is for the contact page popup
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    alert('Form has been SUCCESFULLY submitted! We will get back to you shortly.');
+    form.reset();
+  });
+});
