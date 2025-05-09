@@ -1,21 +1,21 @@
-body, html {
+body, html { /* sets up basic styling and stops horizontal scroll */
   margin: 0;
   padding: 0;
   font-family: Bodoni, serif;
   overflow-x: hidden;
 }
 
-html, body {
+html, body { /* disables smooth scroll */
   scroll-behavior: auto;
 }
 
-main {
+main { /* styles the main part of the page */
   margin-top: 120px;
   padding: 20px;
   text-align: center;
 }
 
-.Title-Of-The-Page {
+.Title-Of-The-Page { /* main title with fade-in effect and styling */
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
@@ -29,18 +29,18 @@ main {
   display: inline-block;
 }
   
-.Title-Of-The-Page.animate {
+.Title-Of-The-Page.animate { /* triggers the title animation */
   animation: slideUp 1s forwards;
 }
   
-@keyframes slideUp { /* Fun sliding up animation using @keyframes */
+@keyframes slideUp { /* makes the title slide up and fade in */
   to {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.intro {
+.intro { /* fullscreen black intro screen */
   position: fixed;
   top: 0;
   left: 0;
@@ -55,15 +55,49 @@ main {
   transition: transform 1s ease-in-out;
 }
   
-.intro-text {
+.intro-text { /* huge text in the intro screen */
   font-size: 10em;
 }
-  
-nav {
+
+nav { /* navbar layout and spacing */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 3;
+}
+
+nav .logo { /* logo styling inside nav */
+  flex: 0 0 auto;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+nav ul { /* removes list bullets and spaces in nav */
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+nav ul li a { /* link styling inside nav */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  display: block;
+}
+
+nav { /* fixed nav bar that stays at the top */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 3;
   background-color: transparent;
   padding: 10px 0;
   display: flex;
@@ -71,30 +105,30 @@ nav {
   align-items: center;
 }
 
-.logo {
+.logo { /* positions the logo to the left */
   display: flex;
   align-items: center;
   padding-left: 30px;
 }
 
-.nav-links {
-  flex-grow: 1; /* Take the remaining space in the nav bar */
+.nav-links { /* nav links go in the center */
+  flex-grow: 1;
   display: flex;  
   justify-content: center;
   align-items: center;
 }
 
-.logo img {
+.logo img { /* image logo size and animation */
   height: 125px;
   width: 125px;
   transition: transform 0.3s ease;
 }
   
-.logo img:hover {
+.logo img:hover { /* scales up the logo when hovered */
   transform: scale(1.2);
 }
   
-nav ul {
+nav ul { /* nav list formatting */
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -103,11 +137,11 @@ nav ul {
   align-items: center;
 }
   
-nav ul li {
+nav ul li { /* spacing between nav items */
   margin: 0 15px;
 }
   
-nav ul li a {
+nav ul li a { /* nav button styling */
   text-decoration: none;
   color: rgb(255, 255, 255);
   padding: 10px 15px;
@@ -117,54 +151,54 @@ nav ul li a {
   font-size: 1.5em;
 }
   
-nav ul li a:hover {
+nav ul li a:hover { /* nav hover effect */
   background-color: transparent;
   color: rgb(0, 0, 0);
   border-color: rgb(0, 0, 0);
 }
   
-.intro.hide {
+.intro.hide { /* moves intro off screen */
   transform: translateY(-100%);
 }
   
-.intro h1 {
+.intro h1 { /* heading font in intro */
   font-size: 3em;
   font-family: Bodoni, serif;
 }
   
-.word {
+.word { /* each word in intro animation */
   opacity: 0;
   transform: translateY(-100px);
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
   display: inline-block;
 }
   
-.word.visible {
+.word.visible { /* shows word once animated */
   opacity: 1;
   transform: translateY(0);
 }
 
-footer.footer-socials, footer.footer-salute, footer.copyright-footer { /* all use the same formatting */
+footer.footer-socials, footer.footer-salute, footer.copyright-footer { /* footer base styling */
   text-align: center;
   padding: 20px;
   font-family: Bodoni, serif;
   background-color: #d0b18f;
 }
 
-footer.footer-salute {
+footer.footer-salute { /* lighter footer strip */
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #caa881;
 }
 
-footer.copyright-footer {
+footer.copyright-footer { /* very bottom part of the footer */
   padding: 10px 20px;
   font-size: 0.9em;
   color: #e0e0e0;
   background-color: #c49e73;
 }
 
-.Socials-Membership-Donate img {
+.Socials-Membership-Donate img { /* styles for social and donate icons */
   max-width: 50px;
   max-height: 50px;
   width: auto;
@@ -174,28 +208,27 @@ footer.copyright-footer {
   border-radius: 5px; 
 }
 
-.Socials-Membership-Donate img:hover {
+.Socials-Membership-Donate img:hover { /* hover effect for social icons */
   transform: scale(1.1);
   background-color: #333333;
   cursor: pointer;
 }
 
-.footer-images {
+.footer-images { /* centers footer logos */
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 10px;
 }
 
-.footer-images img {
+.footer-images img { /* size for the footer images */
   max-height: 150px;
   height: auto;
   width: auto;
   margin-left: 10px;
 }
 
-
-.map-container {
+.map-container { /* wrapper for the map */
   width: 85vw;
   height: 70vh;
   max-width: 100%;
@@ -203,19 +236,29 @@ footer.copyright-footer {
   box-sizing: border-box;
 }
 
-.map-container iframe {
+.map-container iframe { /* makes the map responsive */
   width: 100%;
   height: 100%;
   border: 0;
   display: block;
 }
 
-.spacer {
+.spacer { /* adds space between sections */
   height: 50px; 
   width: 100%;
 }
 
-.Location-info-box {
+.spacer1 { /* smaller spacer */
+  height: 30px; 
+  width: 100%;
+}
+
+.spacer0 { /* bigger spacer */
+  height: 60px; 
+  width: 100%;
+}
+
+.Location-info-box { /* styles the address box */
   max-width: 1000px;
   margin: 20px auto;
   padding: 20px;
@@ -225,21 +268,21 @@ footer.copyright-footer {
   text-align: center;
 }
   
-.Location-info-box h2 {
+.Location-info-box h2 { /* heading in the location box */
   margin-top: 0;
   font-size: 2em;
   color: #000000;
   font-family: Bodoni, serif;
 }
   
-.Location-info-box p {
+.Location-info-box p { /* paragraph in location box */
   font-size: 1.5em;
   color: #000000;
   margin: 15px 0;
   font-family: Bodoni, serif;
 }
   
-.info-button {
+.info-button { /* style for "More Info" button */
   display: inline-block;
   font-family: Bodoni, serif;
   font-size: 1.3em;
@@ -252,11 +295,11 @@ footer.copyright-footer {
   transition: background-color 0.3s ease;
 }
   
-.info-button:hover {
+.info-button:hover { /* button hover effect */
   background-color: rgba(40, 107, 200);
 }
 
-#background-video {
+#background-video { /* full screen background video */
   position: fixed;
   top: 0;
   left: 0;
@@ -266,9 +309,9 @@ footer.copyright-footer {
   z-index: -1;
 }
 
-#audio-toggle-btn {
+#audio-toggle-btn { /* circular mute/unmute button */
   position: fixed;
-  top: 100px;
+  top: 110px;
   right: 20px;
   width: 60px;
   height: 60px;
@@ -277,7 +320,7 @@ footer.copyright-footer {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 1001; /* above everything */
+  z-index: 1001;
   font-size: 1em;
   display: flex;
   align-items: center;
@@ -287,12 +330,12 @@ footer.copyright-footer {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#audio-toggle-btn:hover{
+#audio-toggle-btn:hover { /* hover style for sound button */
   background-color: white;
   color: black;
 }
 
-.content-block {
+.content-block { /* big section for content with image + text */
   display: flex;
   background-color: rgba(192,52,61);
   padding: 20px;
@@ -303,30 +346,30 @@ footer.copyright-footer {
   max-width: 80vw;
   margin: 40px auto;
   box-sizing: border-box;
-  font-size: 1.2em;
+  font-size: 1.5em;
   padding-bottom: 50px;
 }
   
-.content-text, .content-image {
-    flex: 1;
+.content-text, .content-image { /* makes text and image share space equally */
+  flex: 1;
 }
   
-.separator {
+.separator { /* black line between text and image */
   width: 5px;
   background-color: black;
   height: auto;
   min-height: 150px; 
   align-self: stretch;
-  }
+}
     
-.content-image img {
+.content-image img { /* makes image fit nicely */
   width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
 }
  
-.membership-button {
+.membership-button { /* button to go to membership page */
   display: inline-block;
   margin-top: 15px;
   padding: 10px 20px;
@@ -338,11 +381,11 @@ footer.copyright-footer {
   transition: background-color 0.3s ease;
 }
   
-.membership-button:hover {
+.membership-button:hover { /* button hover color */
   background-color: rgba(40, 107, 200);
 }
 
-.About-info-block {
+.About-info-block { /* layout for about us section */
   display: flex;
   background-color: rgba(192,52,61);
   padding: 20px;
@@ -357,11 +400,11 @@ footer.copyright-footer {
   padding-bottom: 50px;
 }
 
-.About-info-text, .About-info-image {
+.About-info-text, .About-info-image { /* lets text and image sit side-by-side */
   flex: 1;
 }
 
-.About-info-separator {
+.About-info-separator { /* black line between about text + image */
   width: 5px;
   background-color: black;
   height: auto;
@@ -369,17 +412,17 @@ footer.copyright-footer {
   align-self: stretch;
 }
 
-.About-info-image img {
-max-width: 100%;
-max-height: 300px;
-width: auto;
-height: auto;
-display: block;
-margin: 0 10px 10px 0;
-object-fit: contain;
+.About-info-image img { /* image formatting for about section */
+  max-width: 100%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 10px 10px 0;
+  object-fit: contain;
 }
 
-.About-info-button {
+.About-info-button { /* button style for about page */
   display: inline-block;
   font-family: Bodoni, serif;
   font-size: 1.3em;
@@ -392,11 +435,11 @@ object-fit: contain;
   transition: background-color 0.3s ease;
 }
 
-.About-info-button:hover {
+.About-info-button:hover { /* hover effect for about button */
   background-color: rgba(40, 107, 200);
 }
 
-.contact-container {
+.contact-container { /* wrapper for contact section */
   display: block;
   max-width: 700px;
   margin: 30px auto;
@@ -405,7 +448,7 @@ object-fit: contain;
   gap: 0;
 }
 
-.contact-form-section, .contact-info {
+.contact-form-section, .contact-info { /* form and info boxes */
   max-width: 700px;
   margin: 30px auto;
   background-color: #f9f5f0;
@@ -415,7 +458,7 @@ object-fit: contain;
   flex: none;
 }
 
-.contact-form-section h2, .contact-info h2 {
+.contact-form-section h2, .contact-info h2 { /* section titles in contact */
   margin-bottom: 20px;
   font-family: Bodoni, serif;
   font-weight: bold;
@@ -423,7 +466,7 @@ object-fit: contain;
   color: #c49a6c;
 }
 
-.contact-form-section label {
+.contact-form-section label { /* labels for form fields */
   display: block;
   margin: 12px 0 6px;
   font-weight: 600;
@@ -432,7 +475,7 @@ object-fit: contain;
 
 .contact-form-section input[type="text"],
 .contact-form-section input[type="email"],
-.contact-form-section textarea {
+.contact-form-section textarea { /* input fields and text area */
   width: 100%;
   padding: 8px 12px;
   border: 1px solid #ccc;
@@ -443,7 +486,7 @@ object-fit: contain;
   resize: vertical;
 }
 
-.contact-form-section button {
+.contact-form-section button { /* submit button style */
   margin-top: 20px;
   background-color: #c49a6c;
   color: white;
@@ -456,11 +499,11 @@ object-fit: contain;
   transition: background-color 0.3s ease;
 }
 
-.contact-form-section button:hover {
+.contact-form-section button:hover { /* Hover effect for form submit button */
   background-color: rgba(40, 107, 200);
 }
 
-.experience-label {
+.experience-label { /* Label text above the experience selection radio buttons */
   text-align: center;
   font-family: Bodoni, serif;
   font-size: 1.1em;
@@ -468,7 +511,7 @@ object-fit: contain;
   color: #333;
 }
 
-.experience-boxes {
+.experience-boxes { /* Container for experience selection radio buttons */
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -476,11 +519,11 @@ object-fit: contain;
   flex-wrap: wrap;
 }
 
-.experience-boxes input[type="radio"] {
+.experience-boxes input[type="radio"] { /* Hide radio buttons, only show custom labels */
   display: none;
 }
 
-.experience-boxes label {
+.experience-boxes label { /* Custom-styled labels for experience levels */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -495,21 +538,34 @@ object-fit: contain;
   font-family: Bodoni, serif;
 }
 
-.experience-boxes input[type="radio"]:checked + label {
+.experience-boxes input[type="radio"]:checked + label { /* Highlight selected experience label */
   background-color: #c49a6c;
   color: white;
   border-color: #a67c3d;
 }
 
-
-.contact-info p {
+.contact-info p { /* Style for contact details paragraph text */
   font-family: Bodoni, serif;
   font-size: 1.1em;
   margin: 10px 0;
   color: #333;
 }
 
-@media (max-width: 768px) { /* Make thing Responsive */
+#contact-form input.invalid,
+#contact-form textarea.invalid { /* Style invalid inputs with red border and background */
+  border: 2px solid #e74c3c; 
+  background-color: #fceae9; 
+}
+
+#contact-form .warning-message { /* Style for inline warning/error messages */
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: 4px;
+  font-family: Bodoni, serif;
+  text-align: left;
+}
+
+@media (max-width: 768px) { /* Responsive adjustments for contact section on tablets */
   .contact-container {
     display: block;
     max-width: 90vw;
@@ -521,7 +577,7 @@ object-fit: contain;
   }
 }
 
-.events-grid {
+.events-grid { /* Container for arranging event buttons in a grid */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
@@ -533,7 +589,7 @@ object-fit: contain;
   perspective: 1000px;
 }
 
-.Event-ButtonBox {
+.Event-ButtonBox { /* Individual event box styling */
   background-color: rgba(200, 200, 200, 0.3);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -550,25 +606,25 @@ object-fit: contain;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.Event-ButtonBox:hover {
+.Event-ButtonBox:hover { /* Hover effect for event boxes */
   transform: scale(1.03);
   box-shadow: 0 12px 24px rgba(0,0,0,0.4); 
 }
 
-.Event-ButtonBox img {
+.Event-ButtonBox img { /* Styling for event image inside the box */
   max-width: 100%;
   height: 200px;          
   object-fit: cover;
   border-radius: 8px;
 }
 
-.Event-ButtonBox h3 {
+.Event-ButtonBox h3 { /* Event title text inside the box */
   margin: 10px 0;
   font-family: Bodoni, serif;
   font-size: 1.5em; 
 }
 
-.Event-ButtonBox p {
+.Event-ButtonBox p { /* Event description text inside the box */
   margin-top: 10px;
   font-family: Bodoni, serif;
   font-size: 1.1em; 
@@ -576,30 +632,30 @@ object-fit: contain;
   color: #555;
 }
 
-@media (max-width: 768px) { /* Make thing Responsive */
+@media (max-width: 768px) { /* Responsive: 2 columns on tablets */
   .events-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) { /* Responsive: 1 column on phones */
   .events-grid {
     grid-template-columns: 1fr;
   }
 }
 
-.Menu-Box {
+.Menu-Box { /* Main container for the menu section */
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
-  background-color: rgba(196, 154, 108, 0.1);
+  background-color: rgba(196, 154, 108, 0.5);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   font-family: Bodoni, serif;
   color: #3a2f1b;
 }
 
-.menu-section {
+.menu-section { /* Container for menu text and image side-by-side */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -607,24 +663,24 @@ object-fit: contain;
   gap: 20px;
 }
 
-.top-section .menu-text-content {
+.top-section .menu-text-content { /* Text section aligned to the left */
   flex: 1;
   text-align: left;
 }
 
-.bottom-section .menu-text-content {
+.bottom-section .menu-text-content { /* Text section aligned to the right */
   flex: 1;
   text-align: right; 
 }
 
-.menu-title-row {
+.menu-title-row { /* Row containing the menu icon and title */
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 8px;
 }
 
-.menu-logo {
+.menu-logo { /* Logo image inside the menu section */
   max-width: 50px;
   max-height: 50px;
   width: auto;
@@ -632,20 +688,20 @@ object-fit: contain;
   object-fit: contain;
 }
 
-.menu-title {
+.menu-title { /* Title text for the menu section */
   font-size: 1.8em;
   font-weight: bold;
   margin: 0;
 }
 
-.menu-description {
+.menu-description { /* Description text under the menu title */
   font-size: 1.1em;
   margin-bottom: 15px;
   line-height: 1.4;
   max-width: 400px;
 }
 
-.menu-button {
+.menu-button { /* Button inside the menu section */
   display: inline-block;
   padding: 12px 28px;
   background-color: #c49a6c;
@@ -658,23 +714,23 @@ object-fit: contain;
   transition: background-color 0.3s ease;
 }
 
-.menu-button:hover {
+.menu-button:hover { /* Hover effect for menu button */
   background-color: rgba(40, 107, 200);
 }
 
-.menu-image-content {
+.menu-image-content { /* Container for menu image on the right */
   flex: 1;
   max-width: 45%;
 }
 
-.menu-image {
+.menu-image { /* Image styling inside the menu section */
   width: 100%;
   height: auto;
   border-radius: 10px;
   object-fit: cover;
 }
 
-.menu-separator {
+.menu-separator { /* Horizontal separator between menu sections */
   border: none;
   border-top: 2px solid #c49a6c;
   margin: 0 0 20px 0;
@@ -682,7 +738,7 @@ object-fit: contain;
   opacity: 0.5;
 }
 
-@media (max-width: 768px) { /* Make thing Responsive */
+@media (max-width: 768px) { /* Responsive: stack menu image and text vertically */
   .menu-section {
     flex-direction: column;
     text-align: center;
@@ -694,5 +750,313 @@ object-fit: contain;
   .menu-image-content {
     max-width: 100%;
     margin-bottom: 15px;
+  }
+}
+
+
+#membership-form { /* Membership form container */
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background-color: #f9f5f0;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-family: Bodoni, serif;
+  color: #3a2f1b;
+  box-sizing: border-box;
+}
+
+.form-row { /* Flex container for form rows */
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.form-column { /* Individual form columns */
+  flex: 1 1 45%;
+  min-width: 280px;
+}
+
+#membership-form label { /* Labels inside membership form */
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+#membership-form input[type="text"],
+#membership-form input[type="password"],
+#membership-form input[type="email"],
+#membership-form select { /* Input and select styling */
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #c49a6c;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: Bodoni, serif;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#membership-form input[type="text"]:focus,
+#membership-form input[type="password"]:focus,
+#membership-form input[type="email"]:focus,
+#membership-form select:focus { /* Focus styles */
+  border-color: rgba(40, 107, 200);
+  outline: none;
+}
+
+#membership-form button[type="submit"] { /* Submit button style */
+  background-color: #c49a6c;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+#membership-form button[type="submit"]:hover { /* Hover effect */
+  background-color: rgba(40, 107, 200);
+}
+
+input.invalid, select.invalid { /* Invalid field highlighting */
+  border: 2px solid #e74c3c;
+  background-color: #fceae9;
+}
+
+.warning-message { /* Warning text below fields */
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: 4px;
+  font-family: Bodoni, serif;
+  text-align: left;
+}
+
+#donation-form { /* Donation form container */
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background-color: #f9f5f0;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-family: Bodoni, serif;
+  color: #3a2f1b;
+  box-sizing: border-box;
+}
+
+.form-row { /* Flex layout for form rows (reused) */
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.form-column { /* Individual column for form layout (reused) */
+  flex: 1 1 45%;
+  min-width: 280px;
+}
+
+.section-header { /* Header inside donation section */
+  background-color: #f39c12;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-size: 1.1em;
+}
+
+#donation-form label { /* Label styling inside donation form */
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+#donation-form input[type="text"],
+#donation-form input[type="email"],
+#donation-form select,
+#donation-form textarea { /* Inputs in donation form */
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #c49a6c;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: Bodoni, serif;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#donation-form input[type="text"]:focus,
+#donation-form input[type="email"]:focus,
+#donation-form select:focus,
+#donation-form textarea:focus { /* Focus effect on donation inputs */
+  border-color: rgba(40, 107, 200);
+  outline: none;
+}
+
+.donation-group { /* Group wrapper for donation options */
+  margin-bottom: 20px;
+}
+
+.donation-label { /* Label for donation groups */
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.donation-group label { /* Labels for individual donation options */
+  display: block;
+  font-weight: normal;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.card-row { /* Flex container for credit card fields */
+  display: flex;
+  gap: 15px;
+}
+
+.card-col { /* Column layout for credit card fields */
+  flex: 1;
+}
+
+#donation-form button[type="submit"] { /* Donation form submit button */
+  background-color: #5a2a83;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+#donation-form button[type="submit"]:hover { /* Hover style for submit */
+  background-color: rgba(40, 107, 200);
+}
+
+input.invalid, select.invalid, textarea.invalid { /* Invalid fields (general) */
+  border: 2px solid #e74c3c;
+  background-color: #fceae9;
+}
+
+.warning-message { /* Warning message text (reused) */
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: 4px;
+  font-family: Bodoni, serif;
+  text-align: left;
+}
+
+.gratitude-message { /* Thank you message styling */
+  max-width: 900px;
+  margin: 20px auto 40px auto;
+  padding: 20px 30px;
+  background-color: #dff0d8;
+  border: 1px solid #3c763d;
+  border-radius: 8px;
+  color: #3c763d;
+  font-family: Bodoni, serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.background-img { /* Background image layer 0 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; 
+  width: 100vw;  
+  background-image: url('Background.png');
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1; 
+}
+
+.background-img-1 { /* Background overlay 1 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; 
+  width: 100vw;  
+  opacity: 0.3;
+  background-image: url('Background1.png');
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1; 
+}
+
+.background-img-2 { /* Background overlay 2 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; 
+  width: 100vw;  
+  opacity: 0.3;
+  background-image: url('Background2.png');
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1; 
+}
+
+@media (max-width: 768px) { /* Make thing Responsive */
+  nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
+    padding: 10px 30px 30px 10px; /* Added padding-right 30px */
+    justify-content: center; 
+    padding-bottom: 30px; 
+    position: relative;
+    z-index: 3;
+  }
+
+  nav .logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: center;
+    justify-self: center; 
+    font-size: 1.2em; 
+    padding-left: 0 !important;
+  }
+
+  nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-column: 2 / 4;
+    grid-row: 1 / 4;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    justify-content: center; 
+  }
+
+  nav ul li {
+    margin: 0;
+    text-align: center;
+  }
+
+  nav ul li a {
+    font-size: 0.9em; 
+    padding: 6px 8px; 
+    max-width: 80px; 
+    margin: 0 auto; 
+    display: block;
   }
 }

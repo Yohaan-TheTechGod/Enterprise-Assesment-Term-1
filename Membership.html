@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:opsz@6..96&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="background-img"></div>
     <div class="intro">
         <h1 class="intro-text">
             <span class="word">Become</span>
@@ -43,6 +44,68 @@
         <div class="Title-Of-The-Page">
             <h1>Become A Member Of Ingleburn RSL</h1>
         </div>
+
+        <h1>Ingleburn RSL Membership Form</h1>
+        <form id="membership-form" action="#" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-column">
+              <label for="fullName">First & Last Name *</label>
+              <input type="text" id="fullName" name="fullName" placeholder="e.g. Yohaan Dosaj" required />
+
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="example@domain.com" required />
+
+              <label for="phone">Phone Number *</label>
+              <input type="text" id="phone" name="phone" placeholder="e.g. 0412 345 678" required />
+
+              <label for="address1">Address 1 *</label>
+              <input type="text" id="address1" name="address1" placeholder="Street adress" required />
+
+              <label for="address2">Address 2 (Optional)</label>
+              <input type="text" id="address2" name="address2" placeholder="Second Street adress (optional)"/>
+
+              <label for="state">State/Territory *</label>
+              <select id="state" name="state" required>
+                <option value="" selected disabled>Select your State/Territory</option>
+                <option value="NSW">New South Wales</option>
+                <option value="VIC">Victoria</option>
+                <option value="QLD">Queensland</option>
+                <option value="WA">Western Australia</option>
+                <option value="SA">South Australia</option>
+                <option value="TAS">Tasmania</option>
+                <option value="ACT">Australian Capital Territory</option>
+                <option value="NT">Northern Territory</option>
+              </select>
+            </div>
+
+            <div class="form-column">
+              <label for="password">Password * (min 8 chars, 1 special char)</label>
+              <input type="password" id="password" name="password" placeholder="e.g. YohaanIsAwesome!" required />
+
+              <label for="cardNumber">Credit/Debit Card Number *</label>
+              <input type="text" id="cardNumber" name="cardNumber" placeholder="0000 0000 0000 0000" required />
+
+              <label for="cvv">CVV/CVC *</label>
+              <input type="text" id="cvv" name="cvv" placeholder="XXX" required />
+
+              <label for="securityQuestion">Security Question *</label>
+              <select id="securityQuestion" name="securityQuestion" required>
+                <option value="" selected disabled>Select a security question</option>
+                <option value="childhoodFriendStreet">What is the name of the street your childhood best friend lived on?</option>
+                <option value="firstSuburb">What Suburb did you first Live In?</option>
+                <option value="year10Camp">Where did you go for your Year 10 Camp and How did you get there?</option>
+                <option value="birthSuburb">In what suburb were you born?</option>
+                <option value="preHighSchoolStreet">What is the name of the street you lived on before starting high school?</option>
+              </select>
+
+              <label for="securityAnswer">Security Question Answer *</label>
+              <input type="text" id="securityAnswer" name="securityAnswer" placeholder="Answer" required />
+
+              <button type="submit" id="submitBtn">Become a Member</button>
+            </div>
+          </div>
+        </form>
+
     </main>
 
     <footer class="footer-socials">
