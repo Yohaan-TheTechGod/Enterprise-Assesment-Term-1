@@ -509,7 +509,7 @@ object-fit: contain;
   color: #333;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Make thing Responsive */
   .contact-container {
     display: block;
     max-width: 90vw;
@@ -576,7 +576,7 @@ object-fit: contain;
   color: #555;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Make thing Responsive */
   .events-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -585,5 +585,114 @@ object-fit: contain;
 @media (max-width: 480px) {
   .events-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+.Menu-Box {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(196, 154, 108, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Bodoni, serif;
+  color: #3a2f1b;
+}
+
+.menu-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.top-section .menu-text-content {
+  flex: 1;
+  text-align: left;
+}
+
+.bottom-section .menu-text-content {
+  flex: 1;
+  text-align: right; 
+}
+
+.menu-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.menu-logo {
+  max-width: 50px;
+  max-height: 50px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.menu-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.menu-description {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  max-width: 400px;
+}
+
+.menu-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #c49a6c;
+  color: white;
+  font-weight: bold;
+  font-family: Bodoni, serif;
+  font-size: 1.1em;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: rgba(40, 107, 200);
+}
+
+.menu-image-content {
+  flex: 1;
+  max-width: 45%;
+}
+
+.menu-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.menu-separator {
+  border: none;
+  border-top: 2px solid #c49a6c;
+  margin: 0 0 20px 0;
+  max-width: 900px;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) { /* Make thing Responsive */
+  .menu-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .bottom-section .menu-text-content,
+  .top-section .menu-text-content {
+    text-align: center;
+  }
+  .menu-image-content {
+    max-width: 100%;
+    margin-bottom: 15px;
   }
 }
